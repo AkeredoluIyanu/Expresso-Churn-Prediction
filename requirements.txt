@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-streamlit==1.26.0
+streamlit==1.32.2
 pandas==2.1.4
-seaborn==0.12.2
-matplotlib==3.8.0
+numpy==1.26.4
 scikit-learn==1.2.2
-catboost==1.2
+catboost==1.2.2
 joblib==1.3.2
-=======
-pandas== 2.1.4
-seaborn==0.12.2
 matplotlib==3.8.0
-scikit-learn==1.2.2
->>>>>>> acee5f0 (Initial commit for Streamlit churn app)
+seaborn==0.12.2
