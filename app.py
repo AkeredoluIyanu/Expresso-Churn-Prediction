@@ -2,6 +2,9 @@
 
 =======
 >>>>>>> acee5f0 (Initial commit for Streamlit churn app)
+
+st.write("🚀 App started loading...")
+
 import streamlit as st
 import pandas as pd
 import numpy as np
