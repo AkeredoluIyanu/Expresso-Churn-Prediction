@@ -4,7 +4,34 @@ import numpy as np
 from joblib import load
 import json
 
-st.write("🚀 App started loading...")
+import streamlit as st
+import os
+
+st.title("📱 Expresso Churn App")
+st.write("App launched!")
+
+# List files in current directory (to confirm what Streamlit sees)
+st.write("Files in working dir:")
+st.write(os.listdir())
+
+try:
+    from joblib import load
+    import json
+    import pandas as pd
+
+    # Load model
+    st.write("Loading model...")
+    model = load("model.joblib")
+    st.success("✅ Model loaded!")
+
+    # Load features
+    st.write("Loading features.json...")
+    with open("features.json") as f:
+        features = json.load(f)
+    st.success("✅ Features loaded!")
+
+except Exception as e:
+    st.error(f"🚨 App crashed: {e}")
 
 # Load the model and feature list
 model = load("model.joblib")
