@@ -3,40 +3,14 @@ import pandas as pd
 import numpy as np
 from joblib import load
 import json
-
-import streamlit as st
-import os
-
-st.title("📱 Expresso Churn App")
-st.write("App launched!")
-
-# List files in current directory (to confirm what Streamlit sees)
-st.write("Files in working dir:")
-st.write(os.listdir())
-
-try:
-    from joblib import load
-    import json
-    import pandas as pd
-
-    # Load model
-    st.write("Loading model...")
-    model = load("model.joblib")
-    st.success("✅ Model loaded!")
-
-    # Load features
-    st.write("Loading features.json...")
-    with open("features.json") as f:
-        features = json.load(f)
-    st.success("✅ Features loaded!")
-
-except Exception as e:
-    st.error(f"🚨 App crashed: {e}")
+st.write("🚀 App started loading...")
 
 # Load the model and feature list
-model = load("model.joblib")
-with open("features.json", "r") as f:
-    features = json.load(f)
+import pickle
+with open("model.pickle", "rb") as f:
+    model = pickle.load(f)
+with open("features.json", "r") as g:
+    features = json.load(g)
 
 st.title("📱 Expresso Churn Prediction App")
 
