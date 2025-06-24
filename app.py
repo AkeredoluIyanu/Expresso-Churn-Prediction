@@ -5,9 +5,10 @@ import json
 st.write("🚀 App started loading...")
 
 # Load the model and feature list
-import pickle
-with open("model.pickle", "rb") as f:
-    model = pickle.load(f)
+
+import joblib
+model = joblib.load("model.joblib")
+
 with open("features.json", "r") as g:
     features = json.load(g)
 
