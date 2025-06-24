@@ -1,13 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from joblib import load
 import json
+st.write("🚀 App started loading...")
 
 # Load the model and feature list
-model = load("model.joblib")
-with open("features.json", "r") as f:
-    features = json.load(f)
+
+import joblib
+model = joblib.load("model.joblib")
+
+with open("features.json", "r") as g:
+    features = json.load(g)
 
 st.title("📱 Expresso Churn Prediction App")
 
