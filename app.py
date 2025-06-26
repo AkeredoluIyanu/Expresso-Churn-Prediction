@@ -9,7 +9,9 @@ st.write("🚀 App started loading...")
 # Load the model and feature list
 
 model = joblib.load("model.joblib")
-
+with open('model.pickle', 'rb') as model_pickle:
+        model = pickle.load(model_pickle)
+    
 with open("features.json", "r") as g:
     features = json.load(g)
 
