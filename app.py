@@ -1,4 +1,7 @@
 import pickle
+with open('model.pickle', 'rb') as model_pickle:
+        model = pickle.load(model_pickle)
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,8 +11,7 @@ st.write("🚀 App started loading...")
 
 # Load the model and feature list
 
-with open('model.pickle', 'rb') as model_pickle:
-        model = pickle.load(model_pickle)
+
     
 with open("features.json", "r") as g:
     features = json.load(g)
